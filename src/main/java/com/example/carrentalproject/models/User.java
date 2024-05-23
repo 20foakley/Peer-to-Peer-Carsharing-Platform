@@ -1,10 +1,29 @@
-package com.example.carrentalproject.model;
+package com.example.carrentalproject.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
     private String email;
+
+    @NotNull
     private String username;
-    private String password;
+
+    @NotNull
+    private String passwordHash;
+
     private boolean isRenter;
     private boolean isAdmin;
     private String streetAddress;
@@ -41,27 +60,27 @@ public class User {
     }
 
     public String getPasswordHash() {
-        return password;
+        return passwordHash;
     }
 
     public void setPasswordHash(String passwordHash) {
-        this.password = password;
+        this.passwordHash = passwordHash;
     }
 
     public boolean isRenter() {
         return isRenter;
     }
 
-    public void setRenter(boolean renter) {
-        isRenter = renter;
+    public void setRenter(boolean isRenter) {
+        this.isRenter = isRenter;
     }
 
     public boolean isAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     public String getStreetAddress() {
