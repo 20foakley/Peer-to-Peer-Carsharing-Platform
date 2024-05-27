@@ -1,7 +1,6 @@
-package com.example.carrentalproject.controllers;
+package com.example.carrentalproject.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 
 public class HomeController {
