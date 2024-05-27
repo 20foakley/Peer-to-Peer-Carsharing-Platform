@@ -1,5 +1,4 @@
 package com.example.carrentalproject.repository;
 
-
-public class UserRepository {
+public class VehiclesRepository {
 }
