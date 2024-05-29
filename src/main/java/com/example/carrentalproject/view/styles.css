@@ -1,11 +1,9 @@
-/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
 }
@@ -29,10 +27,10 @@ header h1 {
 
 nav ul {
     list-style-type: none;
+    display: inline-flex;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
@@ -41,11 +39,47 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav .become-host-btn {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+nav .hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.search-section {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+}
+
+.search-form {
+    text-align: center;
+}
+
+.search-form input,
+.search-form button {
+    margin: 5px;
+    padding: 10px;
+}
+
 .hero {
-    background-image: url('your-image-url.jpg'); /* Replace 'your-image-url.jpg' with the path to your image */
+    background-image: url('placeholder.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 100px 0;
 }

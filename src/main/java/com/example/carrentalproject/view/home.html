@@ -3,37 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turo Clone</title>
+    <title>Car Rentals</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Turo Clone</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Browse Listings</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Login with Google</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <h1>Car Rental Experience</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Browse Listings</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Sign Up/Login</a></li>
+            </ul>
+            <a href="#" class="become-host-btn">Become a Host</a>
+            <div class="hamburger-menu">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </div>
+        </nav>
+    </div>
+</header>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Welcome to Turo Clone</h2>
-            <p>Browse listings and rent cars for your next adventure!</p>
-            <a href="#" class="btn">Browse Listings</a>
-        </div>
-    </section>
+<section class="search-section">
+    <div class="container">
+        <form action="#" class="search-form">
+            <input type="text" placeholder="Where (City, airport, address or hotel)">
+            <input type="date" id="start-date" name="start-date" placeholder="From">
+            <input type="time" id="start-time" name="start-time">
+            <input type="date" id="end-date" name="end-date" placeholder="Until">
+            <input type="time" id="end-time" name="end-time">
+            <button type="submit">Search for cars</button>
+        </form>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Turo Clone</p>
-        </div>
-    </footer>
+<section class="hero">
+    <div class="container">
+        <h2>Welcome to Rentals!</h2>
+        <p>Browse listings and rent cars for your next adventure!</p>
+        <a href="#" class="btn">Browse Listings</a>
+    </div>
+</section>
+
+<section class="browse-make">
+    <div class="container">
+        <h2>Browse by Make</h2>
+    </div>
+</section>
+
+<section class="browse-destination">
+    <div class="container">
+        <h2>Browse by Destination</h2>
+    </div>
+</section>
+
+<section class="meet-hosts">
+    <div class="container">
+        <h2>Meet Our Hosts</h2>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024</p>
+    </div>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>
