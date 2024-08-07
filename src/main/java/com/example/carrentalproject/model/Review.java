@@ -3,7 +3,7 @@ package com.example.carrentalproject.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Check;
 import jakarta.validation.constraints.NotNull;
-import java.io.Serializable;
+
 import java.util.Date;
 
 @Entity
@@ -12,7 +12,7 @@ import java.util.Date;
                 @UniqueConstraint(columnNames = {"id"})
         })
 @Check(constraints = "reviewer_user_id <> reviewed_user_id")
-public class Reviews implements Serializable {
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,17 +21,17 @@ public class Reviews implements Serializable {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reviewer_user_id")
-    private Users reviewerUser;
+    private User reviewerUser;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reviewed_user_id")
-    private Users reviewedUser;
+    private User reviewedUser;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "listing_id")
-    private Listings listing;
+    private Listing listing;
 
     @NotNull
     @Column(length = 20)
@@ -58,27 +58,27 @@ public class Reviews implements Serializable {
         this.id = id;
     }
 
-    public Users getReviewerUser() {
+    public User getReviewerUser() {
         return reviewerUser;
     }
 
-    public void setReviewerUser(Users reviewerUser) {
+    public void setReviewerUser(User reviewerUser) {
         this.reviewerUser = reviewerUser;
     }
 
-    public Users getReviewedUser() {
+    public User getReviewedUser() {
         return reviewedUser;
     }
 
-    public void setReviewedUser(Users reviewedUser) {
+    public void setReviewedUser(User reviewedUser) {
         this.reviewedUser = reviewedUser;
     }
 
-    public Listings getListing() {
+    public Listing getListing() {
         return listing;
     }
 
-    public void setListing(Listings listing) {
+    public void setListing(Listing listing) {
         this.listing = listing;
     }
 

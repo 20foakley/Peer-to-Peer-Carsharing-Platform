@@ -5,7 +5,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Temporal;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.JoinColumn;
@@ -14,11 +13,16 @@ import jakarta.persistence.UniqueConstraint;
 import org.hibernate.annotations.Check;
 import jakarta.persistence.FetchType;
 import jakarta.validation.constraints.NotNull;
-import java.io.Serializable;
+
 import java.util.Date;
 
-
-public class Listings {
+@Entity
+@Table(name = "listings", schema = "p2p_car_rental",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"id"})
+        })
+@Check(constraints = "renter_user_id <> owner_user_id")
+public class Listing {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,13 +30,17 @@ public class Listings {
 
     //------------------------------------//
     // Relationships
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vehicle_id", nullable = false)
-    private Vehicles vehicle;
 
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "owner_user_id", nullable = false)
-    private Users owner;
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_user_id")
+    private User ownerUser;
+
     //------------------------------------//
 
     @Column(nullable = false, unique = true, length = 25)
@@ -69,7 +77,6 @@ public class Listings {
     @NotNull
     @Column(length=20)
     private String description;
-
 
 
     // Getters and Setters
@@ -171,19 +178,19 @@ public class Listings {
         this.description = description;
     }
 
-    public Vehicles getVehicle() {
+    public Vehicle getVehicle() {
         return vehicle;
     }
 
-    public void setVehicle(Vehicles vehicle) {
+    public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
-    public Users getOwner() {
-        return owner;
+    public User getOwnerUser() {
+        return ownerUser;
     }
 
-    public void setOwner(Users owner) {
-        this.owner = owner;
+    public void setOwnerUser(User ownerUser) {
+        this.ownerUser = ownerUser;
     }
 }

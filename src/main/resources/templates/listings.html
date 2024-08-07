@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Rentals</title>
-    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
-<header>
-    <div class="navbar">
-        <h1 class="navbar-title">Car Rental Experience</h1>
-        <div class="nav-right">
-            <button type="submit" class="button">Become a Host</button>
-            <button type="button" id="login-button" class="button">Log In</button>
-            <img src="../static/Hamburger_icon.svg" id="hamburger-icon" alt="Menu" class="hamburger-icon">
-        </div>
+    <div id = "page-container">
+        <header>
+            <h1 class="navbar-title">Car Rental Experience</h1>
+            <div class ="center-hidden"></div>
+            <div class="nav-right">
+                <button type="submit" class="button">Become a Host</button>
+                <button type="button" id="login-button" class="button">Log In</button>
+                <img src="../static/images/Hamburger_icon.svg" id="hamburger-icon" alt="Menu" class="hamburger-icon">
+            </div>
+        </header>
     </div>
     <div class="menu" id="menu">
         <a href="#">Home</a>
@@ -24,7 +26,6 @@
         <a href="#">Contact</a>
         <a href="#" id="sign-up-login-link">Sign Up/Login</a>
     </div>
-</header>
 
 <main class="content-section">
     <div class = "container">
@@ -52,6 +53,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-<script src="../static/get_vehicles.js"></script>
+<script src="../static/js/navbar.js"></script>
+<script src="../static/js/get_vehicles.js"></script>
 </body>
 </html>

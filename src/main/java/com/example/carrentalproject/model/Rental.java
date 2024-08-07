@@ -2,10 +2,18 @@ package com.example.carrentalproject.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import java.io.Serializable;
+import org.hibernate.annotations.Check;
+
 import java.util.Date;
 
-public class Rentals {
+
+@Entity
+@Table(name = "rentals", schema = "p2p_car_rental",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"id"})
+        })
+@Check(constraints = "renter_user_id <> owner_user_id")
+public class Rental {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,12 +24,12 @@ public class Rentals {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "renter_user_id")
-    private Users renterUser;
+    private User renterUser;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_user_id")
-    private int ownerUser;
+    private User ownerUser;
     //------------------------------------//
 
     @NotNull

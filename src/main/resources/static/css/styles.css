@@ -12,9 +12,6 @@ body {
     position: relative;
     min-height: 100vh;
 }
-#content-wrap {
-    padding-bottom: 2.5rem;
-}
 
 header {
     background-color: #fff;
@@ -26,23 +23,24 @@ header {
 }
 
 .navbar {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 120em;
+    width: 100%;
+    margin: 0;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar-title {
+.nav-left {
     font-size: 24px;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
-
 
 .hamburger-icon {
     cursor: pointer;
@@ -73,7 +71,7 @@ header {
 }
 
 .hero {
-    background-image: url('hero_placeholder.jpg');
+    background-image: url('../images/hero_placeholder.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -98,7 +96,6 @@ header {
 
 }
 
-
 .button {
     background-color: #66ccff;
     border: none;
@@ -117,20 +114,19 @@ header {
 }
 
 .content-section {
+    display: block;
     text-align: center;
-    padding: 50px 0;
+    padding: 100px 100px;
 }
 
 .content-section .container {
-    max-width: 800px;
+    max-width: 50%;
     margin: 0 auto;
 }
 
 .content-section h2 {
     font-size: 28px;
     margin-bottom: 20px;
-
-
 }
 
 .popup {
@@ -203,9 +199,8 @@ header {
     text-decoration: underline;
 }
 
-
 footer {
-    background-color: ##ffffff;
+    background-color: #ffffff;
     color: #333;
     text-align: center;
     padding: 20px 0;

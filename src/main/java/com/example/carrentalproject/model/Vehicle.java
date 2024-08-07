@@ -11,15 +11,13 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
 import org.hibernate.annotations.Check;
 
-import java.io.Serializable;
-
 @Entity
 @Table(name = "vehicles", schema = "p2p_car_rental",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = {"year", "make", "model"})
 })
 @Check(constraints = "year >= 1900 AND year <= EXTRACT(YEAR FROM CURRENT_DATE) + 1")
-public class Vehicles implements Serializable {
+public class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
